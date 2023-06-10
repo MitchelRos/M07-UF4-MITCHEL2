@@ -57,7 +57,6 @@ TEMPLATES = [
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
             'templates',
-            'templates/practica16',
         ],
         'APP_DIRS': True,
         'OPTIONS': {
