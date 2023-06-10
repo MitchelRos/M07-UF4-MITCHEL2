@@ -55,7 +55,10 @@ ROOT_URLCONF = 'jaumebalmes_mitchel.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+            'templates',
+            'templates/practica16',
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
