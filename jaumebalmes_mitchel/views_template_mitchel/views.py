@@ -103,3 +103,11 @@ def update_clase(request, clase_id):
         form.save()
         return redirect('list_clases')
     return render(request, 'clases_form-edit.html', {'form': form})
+
+#----------------D E L E T E--------------
+def delete_clase(request, clase_id):
+    clase = get_object_or_404(Clases, id=clase_id)
+    if request.method == 'POST':
+        clase.delete()
+        return redirect('list_clases')
+    return render(request, 'clases_del-confirm.html', {'clase': clase})
