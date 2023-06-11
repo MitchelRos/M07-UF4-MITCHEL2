@@ -66,3 +66,4 @@ def clases_form(request):
     form = ClasesForm()
     context = {'form':form}
     return render(request, 'form.html', context)
+
