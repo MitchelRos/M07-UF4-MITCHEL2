@@ -19,11 +19,9 @@ from views_template_mitchel import views
 from django.contrib import admin
 from django.urls import include, path
 
+# se que puedo tenr un uls.py en app pero he querido aprovechar este, ya que no me decian lo contrario
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.home, name='home'),
-    path('name-app/students/', views.Student, name='student'),
-    path('name-app/students/student/<int:student_id>/', views.student_info, name='student_info'),
-    path('name-app/teachers/', views.Teacher, name='teacher'),
-    path('name-app/teachers/teacher/<int:teacher_id>/', views.teacher_info, name='teacher_info'),
+    path('name-app/', include('views_template_mitchel.urls')),
 ]

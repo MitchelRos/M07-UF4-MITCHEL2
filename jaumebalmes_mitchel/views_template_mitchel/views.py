@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .form import ClasesForm
 
 # Create your views here.
 def home(request):
@@ -59,3 +60,9 @@ def teacher_info(request, teacher_id):
 
     context = {'teacher': selected_teacher, 'title': 'Teacher'}
     return render(request, 'detail-teacher.html', context)
+
+# Form de clases
+def clases_form(request):
+    form = ClasesForm()
+    context = {'form':form}
+    return render(request, 'form.html', context)
