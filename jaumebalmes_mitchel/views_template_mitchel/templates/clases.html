@@ -1,0 +1,31 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/student.css' %}">
+    <title>Student</title>
+</head>
+
+<body>
+    {% include 'nav.html' %}
+    <h1>Clases</h1>
+    <hr>
+    <section>
+        {% for student in students %}
+        <!-- <a href="{% url 'student_info' student_id=student.id %}"> -->
+            <div>
+                <h3>{{ student.name }}</h3>
+                <hr>
+                <span class="subtitle">Descripción:</span>
+                <div class="description">{{ student.desc }}</div>
+            </div>
+        <!-- </a> -->
+        {% endfor %}
+    </section>
+
+</body>
+
+</html>
