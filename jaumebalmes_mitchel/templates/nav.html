@@ -1,0 +1,15 @@
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/nav.css' %}">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0" />
+</head>
+<header>
+    <nav>
+        <a href="{% url 'teacher' %}" title="TEACHER" class="material-symbols-outlined link-nav">interactive_space</a>
+        <a href="{% url 'home' %}" title="HOME" class="material-symbols-outlined link-nav">home</a>
+        <a href="{% url 'student' %}" title="STUDENT" class="material-symbols-outlined link-nav">school</a>
+    </nav>
+</header>
