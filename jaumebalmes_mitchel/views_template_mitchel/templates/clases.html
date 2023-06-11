@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/clases.css' %}">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0" />
+    <title>Student</title>
+</head>
+
+<body>
+    {% include 'nav.html' %}
+    <h1>Clases</h1>
+    <hr>
+    <div class="hihi">
+        {% block content %}
+        <a href="{% url 'add_clase' %}" title="ADD Clase" class="add-cls">
+            Añadir
+        </a>
+    </div>
+    
+    <section>
+        {% for clase in clases %}
+        <a class="contenedor" href="{% url 'clase_info' clase_id=clase.id %}">
+            <div>
+                <h3>{{ clase.name }}</h3>
+                <hr>
+                <div class="subtitle">Profesor: <div class="field">{{ clase.teacher }}</div>
+                </div>
+                <div class="subtitle">Num. Clase ID: <div class="field">{{ clase.numberClass }}</div>
+                </div>
+                <div class="subtitle">Num. estudiantes: <div class="field">{{ clase.students }}</div>
+                </div>
+                <div class="subtitle">Tutor: <div class="field">{{ clase.classTutor }}</div>
+                </div>
+                <div class="subtitle">Delegado: <div class="field">{{ clase.classPresident }}</div>
+                </div>
+                <div class="subtitle">Descripción: <div class="field">{{ clase.description }}</div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+
+    </section>
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/clases.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/boton.css' %}">
+    <title>Student</title>
+</head>
+
+<body style="text-align: center;">
+    {% include 'nav.html' %}
+    <h1 style="text-align: center; font-family: 'Comic Sans ms'; font-size: 50px;">Clase Detail</h1>
+    <hr>
+    {% block content %}
+    <a href="{% url 'update_clase' clase_id=clase.id %}" title="EDIT Clase" class="edit-cls volver">Edit</a>
+    <a href="{% url 'delete_clase' clase_id=clase.id %}" title="DEL Clase" class="del-cls volver">DEL</a>
+    {% endblock %}
+    <div
+        style="display: block;text-align: center; background-color: lightgray;padding: 10px; color: black; border-radius: 15px; margin: 20px 10px;">
+        <h4>{{ clase.name }}</h4>
+        <hr>
+        <div class="subtitle">Profesor: <div class="field">{{ clase.teacher }}</div>
+        </div>
+        <div class="subtitle">Num. Clase ID: <div class="field">{{ clase.numberClass }}</div>
+        </div>
+        <div class="subtitle">Num. estudiantes: <div class="field">{{ clase.students }}</div>
+        </div>
+        <div class="subtitle">Tutor: <div class="field">{{ clase.classTutor }}</div>
+        </div>
+        <div class="subtitle">Delegado: <div class="field">{{ clase.classPresident }}</div>
+        </div>
+        <div class="subtitle">Descripción: <div class="field">{{ clase.description }}</div>
+        </div>
+    </div>
+    <div class="linkk">
+        <a class="volver" href="{% url 'list_clases' %}">
+            << Volver a la lista de Clases</a>
+    </div>
+</body>
+
+</html>

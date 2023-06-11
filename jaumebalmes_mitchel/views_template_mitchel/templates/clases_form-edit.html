@@ -1,0 +1,15 @@
+{% extends 'clase-info.html' %}
+
+{% block content %}
+<div style="background-color: rgb(70, 212, 212); margin: 0 40px; border-radius: 15px;">
+    <h3>Editar una clase</h3>
+    <hr>
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_div }}
+        <button type="submit">Guardar</button>
+    </form>
+    <hr>
+    <a href="{% url 'list_clases' %}" title="ADD CLASS" class="material-symbols-outlined link-nav ">close</a>
+</div>
+{% endblock %}
