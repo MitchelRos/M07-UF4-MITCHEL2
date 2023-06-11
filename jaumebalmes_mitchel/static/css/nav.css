@@ -1,0 +1,25 @@
+
+nav {
+  padding: 10px 0;
+  display: flex;
+  justify-content: space-around;
+  border-bottom: solid black 1px;
+  border-radius: 0px 0px 20px 20px;
+  margin-bottom: 10px;
+  background-color: #23272a;
+}
+
+header>nav>a.link-nav {
+  display: inline-block;
+  text-decoration: none;
+  color: wheat;
+  font-size: 50px !important;
+  font-weight: bolder;
+  border-radius: 10px;
+  transition: all 0.2s ease-in-out;
+}
+header>nav a.link-nav:hover {
+  background-color: rgba(83, 143, 255, 0.656);
+  color: #23272a;
+  box-shadow: 0px 0px 10px 12px rgba(83, 143, 255, 0.656);
+}
