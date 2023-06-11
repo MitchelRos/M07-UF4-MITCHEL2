@@ -94,3 +94,12 @@ def add_clase(request):
     else:
         form = ClasesForm()
     return render(request, 'clases_form.html', {'form': form})
+
+#----------------U P D A T E--------------
+def update_clase(request, clase_id):
+    clase = get_object_or_404(Clases, id=clase_id)
+    form = ClasesForm(request.POST or None, instance=clase)
+    if form.is_valid():
+        form.save()
+        return redirect('list_clases')
+    return render(request, 'clases_form-edit.html', {'form': form})

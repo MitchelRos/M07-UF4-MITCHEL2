@@ -9,7 +9,7 @@ urlpatterns = [
     path('clases/add', views.add_clase, name='add_clase'),
     path('clases/<int:clase_id>', views.clase_info, name='clase_info'),
     # path('clases/<int:clase_id>/delete', views.delete_clase, name='delete_clase'),
-    # path('clases/<int:clase_id>/edit', views.update_clase, name='update_clase'),
+    path('clases/<int:clase_id>/edit', views.update_clase, name='update_clase'),
     # ejercicios anteriores, como esta junto no quiero editarlo
     path('clases-form/', views.clases_form, name='clases_form'),
     path('students/', views.Student, name='student'),
