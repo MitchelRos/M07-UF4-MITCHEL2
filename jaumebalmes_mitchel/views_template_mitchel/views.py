@@ -1,11 +1,13 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from .form import ClasesForm
+from .models import Clases
+
 
 # Create your views here.
 def home(request):
     return render(request, 'home.html')
 
-# Listas de alumnos y profrsores
+# Listas de alumnos y profrsores para ejercicios anteriorer
 students = [
     {'id': 1, 'name': 'Raul Rufo', 'desc': 'Maestría en Pelos Excéntricos'},
     {'id': 2, 'name': 'Herson', 'desc': 'Padre Esquizofrénico'},
@@ -67,3 +69,17 @@ def clases_form(request):
     context = {'form':form}
     return render(request, 'form.html', context)
 
+# ----------------------------------------------------------------------------
+# ------------------------------- C - R - U - D ------------------------------
+# ----------------------------------------------------------------------------
+
+#-----------------R E A D-----------------
+# read all items
+def list_clases(request):
+    clases = Clases.objects.all()
+    context = {'clases': clases}
+    return render(request, 'clases.html', context)
+# read 1 item
+def clase_info(request, clase_id):
+    clase = get_object_or_404(Clases, id=clase_id)
+    return render(request, 'clase-info.html', {'clase': clase})
