@@ -32,9 +32,12 @@ section>a:hover{
 
 }
 section>a>div{
-    height: 300px;
+    height: 250px;
 }
 .subtitle{
-    text-align: left;
+    text-align: center;
     font-weight: bolder;
+}
+.field{
+    font-weight: normal;
 }
