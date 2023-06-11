@@ -1,4 +1,4 @@
-from django.shortcuts import get_object_or_404, render
+from django.shortcuts import get_object_or_404, redirect, render
 from .form import ClasesForm
 from .models import Clases
 
@@ -74,7 +74,7 @@ def clases_form(request):
 # ----------------------------------------------------------------------------
 
 #-----------------R E A D-----------------
-# read all items
+# Read all items
 def list_clases(request):
     clases = Clases.objects.all()
     context = {'clases': clases}
@@ -83,3 +83,14 @@ def list_clases(request):
 def clase_info(request, clase_id):
     clase = get_object_or_404(Clases, id=clase_id)
     return render(request, 'clase-info.html', {'clase': clase})
+
+#----------------C R E A T E--------------
+def add_clase(request):
+    if request.method == 'POST':
+        form = ClasesForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('list_clases')
+    else:
+        form = ClasesForm()
+    return render(request, 'clases_form.html', {'form': form})
