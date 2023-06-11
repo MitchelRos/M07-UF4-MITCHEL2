@@ -1,3 +1,6 @@
+body{
+    margin: 0 auto !important;
+}
 h1{
     text-align: center;font-family: 'Comic Sans ms'; font-size: 50px;
 }
@@ -12,7 +15,7 @@ section{
     gap: 10px;
     margin: 0 20px;
 }
-section a{
+a.contenedor{
     display: block;
     text-align: center;
     background-color: lightgray;
@@ -24,14 +27,14 @@ section a{
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     transition: all 0.3s ease-in-out;
 }
-section>a:hover{
+a.contenedor:hover{
     background-color: rgb(162, 192, 198);
     border: solid black 2px;
     box-shadow: 8px 8px 16px rgba(81, 85, 68, 0.2);
     transform: scale(1.1,1.1);
 
 }
-section>a>div{
+a.contenedor>div{
     height: 250px;
 }
 .subtitle{
@@ -40,4 +43,27 @@ section>a>div{
 }
 .field{
     font-weight: normal;
+}
+.add-cls:hover{
+    transform: scale(1.1);
+}
+.add-cls{
+    display:inline-block;
+    width:80%;
+    background-color: rgb(31, 160, 117);
+    font-size: 50px !important;
+    font-weight: bolder;
+    text-align: center;
+    text-decoration: none;
+    margin-bottom: 40px;
+    line-height: 55px !important;
+    border-radius: 20px;
+    border: solid black 1px;
+}
+.hihi{
+    display: flex;
+    justify-content: center;
+}
+.link-nav{
+    text-decoration: none;
 }

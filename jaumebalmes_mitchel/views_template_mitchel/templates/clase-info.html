@@ -14,8 +14,12 @@
     {% include 'nav.html' %}
     <h1 style="text-align: center; font-family: 'Comic Sans ms'; font-size: 50px;">Clase Detail</h1>
     <hr>
+    {% block content %}
+    <a href="{% url 'update_clase' clase_id=clase.id %}" title="EDIT Clase" class="edit-cls volver">Edit</a>
+    <a href="{% url 'delete_clase' clase_id=clase.id %}" title="DEL Clase" class="del-cls volver">DEL</a>
+    {% endblock %}
     <div
-        style="display: block;text-align: center; background-color: lightgray;padding: 10px; color: black; border-radius: 15px; margin: auto 10px;">
+        style="display: block;text-align: center; background-color: lightgray;padding: 10px; color: black; border-radius: 15px; margin: 20px 10px;">
         <h4>{{ clase.name }}</h4>
         <hr>
         <div class="subtitle">Profesor: <div class="field">{{ clase.teacher }}</div>

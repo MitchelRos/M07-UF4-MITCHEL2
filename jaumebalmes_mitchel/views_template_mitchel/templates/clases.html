@@ -20,12 +20,11 @@
         <a href="{% url 'add_clase' %}" title="ADD Clase" class="add-cls">
             Añadir
         </a>
-        {% endblock %}
     </div>
-
+    
     <section>
         {% for clase in clases %}
-        <a href="{% url 'clase_info' clase_id=clase.id %}">
+        <a class="contenedor" href="{% url 'clase_info' clase_id=clase.id %}">
             <div>
                 <h3>{{ clase.name }}</h3>
                 <hr>
@@ -46,6 +45,7 @@
         {% endfor %}
 
     </section>
+    {% endblock %}
 </body>
 
 </html>
