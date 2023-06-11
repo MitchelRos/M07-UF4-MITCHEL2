@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/boton.css' %}">
+    <title>Student INFO</title>
+</head>
+
+<body>
+    {% include 'nav.html' %}
+    <h1 style="text-align: center; font-family: 'Comic Sans ms'; font-size: 50px;">Student Detail</h1>
+    <hr>
+    <div
+        style="display: block;text-align: center;background-color: lightgray;padding: 10px;color: black;border-radius: 15px;  margin: auto 10px;">
+        <h3>Nombre:</h2>
+            <p>{{ student.name }}</p>
+            <hr>
+            <h3>Descripción</h3>
+            <p>{{ student.desc }}</p>
+    </div>
+    <div class="linkk">
+        <a class="volver" href="{% url 'student' %}">
+            << Volver a la lista de estudiantes</a>
+    </div>
+</body>
+
+</html>

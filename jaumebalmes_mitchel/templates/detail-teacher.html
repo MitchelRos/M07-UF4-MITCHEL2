@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/boton.css' %}">
+    <title>Teacher INFO</title>
+</head>
+
+<body>
+    {% include 'nav.html' %}
+    <h1 style="text-align: center; font-family: 'Comic Sans ms'; font-size: 50px;">Teacher Detail</h1>
+    <hr>
+    <div
+        style="display: block;text-align: center;background-color: lightgray;padding: 10px;color: black;border-radius: 15px; margin: auto 10px;">
+        <h4>Nombre:</h4>
+        <p>{{ teacher.name }}</p>
+        <hr>
+        <h4>Edad:</h4>
+        <p>{{ teacher.age }}</p>
+        <hr>
+        <h4>Clase:</h4>
+        <p>{{ teacher.clss }}</p>
+    </div>
+    <div class="linkk">
+        <a class="volver" href="{% url 'teacher' %}">
+            << Volver a la lista de Profesores</a>
+    </div>
+</body>
+
+</html>

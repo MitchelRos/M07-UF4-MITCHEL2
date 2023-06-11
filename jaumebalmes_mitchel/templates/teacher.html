@@ -1,12 +1,32 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teachel</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/teacher.css' %}">
+    <title>Teacher</title>
 </head>
+
 <body>
-    teacher
+    {% include 'nav.html' %}
+    <h1>Teachers</h1>
+    <hr>
+    <section>
+        {% for teacher in profs %}
+        <a href="{% url 'teacher_info' teacher_id=teacher.id %}">
+            <!-- Funciona pero si no se muestra poner el prof en plural "profs" -->
+            <div>
+                <h3>{{ teacher.name }}</h3>
+                <hr>
+                <div class="subtitle">Age: <div class="age">{{ teacher.age }}</div>
+                </div>
+                <div class="subtitle">Clase: <div class="class">{{ teacher.clss }}</div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </section>
 </body>
 </html>
