@@ -6,6 +6,8 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/clases.css' %}">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0" />
     <title>Student</title>
 </head>
 
@@ -13,6 +15,14 @@
     {% include 'nav.html' %}
     <h1>Clases</h1>
     <hr>
+    <div class="hihi">
+        {% block content %}
+        <a href="{% url 'add_clase' %}" title="ADD Clase" class="add-cls">
+            Añadir
+        </a>
+        {% endblock %}
+    </div>
+
     <section>
         {% for clase in clases %}
         <a href="{% url 'clase_info' clase_id=clase.id %}">
@@ -35,6 +45,7 @@
         </a>
         {% endfor %}
 
+    </section>
 </body>
 
 </html>
