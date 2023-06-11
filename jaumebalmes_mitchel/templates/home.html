@@ -1,16 +1,25 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="{% static 'css/all.css' %}">
     <link rel="stylesheet" type="text/css" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,700,1,0" />
     <title>HOME</title>
 </head>
+
 <body>
-    <div class="background"></div>
+    <!-- <div class="background"></div> -->
     {% include 'nav.html' %}
     <h1>HOME</h1>
     <hr>
+    <!-- Esto de abajo permite que se pueda cargar templates o extensiones si no no se muestra -->
+    {% block content %}
+    <a href="{% url 'clases_form' %}" title="ADD FORM" class="material-symbols-outlined link-home">add_ad</a>
+    {% endblock %}
 </body>
+
 </html>

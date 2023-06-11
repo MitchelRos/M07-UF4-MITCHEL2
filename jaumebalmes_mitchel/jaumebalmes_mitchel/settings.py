@@ -38,7 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'views_template_mitchel.apps.ViewsTemplateMitchelConfig'
+    'views_template_mitchel.apps.ViewsTemplateMitchelConfig',
 ]
 
 MIDDLEWARE = [
